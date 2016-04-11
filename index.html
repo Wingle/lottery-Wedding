@@ -20,26 +20,33 @@
         }
 
         .number {
-            width: 300px;
+            width: 380px;
             font-size: 60px;
             font-family: "impact";
             color: #BA0000;
         }
+		
+		.titlename {
+			width: 380px;
+			font-size: 68px;
+            font-family: "impact";
+            color: #BA0000;
+		}
     </style>
 
     <script type="text/javascript">
         var nameList = ["李晟", "郑思思", "俞丰", "赵一俊", "黄晓明", "薛健", "郁钰", "沈赟",
-					    "邬轶昕家庭", "程嬿家庭", "陈琳家庭", "李龙", "张惠", "付强", "程平峰", "吴兵", "陈金华", "任春剑",
-					    "王平", "李庭赞", "李哲君", "周文卿", "杨晓星", "邓向平", "马际德", "马骏", "陈钰", "邓正敏",
-					    "张玲妹", "邓漪佳", "何洁蓓", "邓成拥", "邓成华", "张根兄", "郑志明", "邓正祥", "程玉妹", "邓煜",
-					    "龙菲菲", "邓莹", "朱佳芸", "邵钟秀", "徐雯菲", "侯丽红", "王蓉芝", "郁建辉", "王雪琴", "张立公",
-					    "余建伟", "李美珍", "邓菊平", "高玉芳", "胡炜佳", "申月芳", "张勇挚", "杨美娣家庭", "孟莲芳", "祝军",
+					    "邬轶昕", "程嬿", "陈琳", "李龙", "张惠", "付强", "程平峰", "吴兵", "陈金华", "任春剑",
+					    "王平", "李庭赞", "李哲君", "周文卿", "杨晓星", "邓成英", "王瑾", "胡伟", "邓向平", "马际德", "马骏", "陈钰", "邓正敏",
+					    "张玲妹", "邓漪佳", "何洁蓓", "邓成拥", "邓成华", "张根兄", "郑志明", "邓正祥", "程玉梅", "邓煜",
+					    "龙菲菲", "邓莹", "邓芸", "朱佳芸", "邵钟秀", "徐雯菲", "侯丽红", "王蓉芝", "郁建辉", "王雪琴", "张立公",
+					    "余建伟", "李美珍", "邓菊平", "高玉芳", "胡炜佳", "申月芳", "张勇挚", "杨美娣", "徐海胜", "孟莲芳", "祝军",
 					    "黄建新", "凌雪玲", "倪锦凤", "李向亮", "孙兰芳", "倪锦婕", "刘承宗", "付金妹", "杜家勇", "杜忆妍",
-					    "彭勃夫妇", "张翔", "李超", "邵芳家庭", "曾晓曦家庭", "唐颖", "赵春云", "谈晨", "张桂奎", "袁佳妮",
-					    "唐子涵", "段历节", "赵梦云", "段毅钧", "麦坚", "伊涵琼", "邓美平", "刘磊", "沈莉", "朱利华",
-					    "朱蕾", "邓正平", "吴月芬", "邓冠文", "严婷婷", "李淑芳", "邓萍", "李淑珍", "翟牛宝", "吴国芬",
-					    "李健家庭", "李苗根", "姚培明", "张怡", "姚莹", "黄晨雄", "阮培龙", "谢桂萍", "叶国槡", "老苗",
-					    "刘萌宇", "卞景浩", "倪锦泉", "周贤宝", "牟裕峰", "杨玉莲", "韦忠英", "奚亚萍", "丁林华", "陈燕萍",
+					    "彭勃", "张翔", "李超", "邵芳", "曾晓曦", "唐颖", "赵春云", "谈晨", "张桂奎", "袁佳妮",
+					    "唐子涵", "段历节", "赵梦云", "段毅钧", "麦坚", "尹涵琼", "邓美平", "刘磊", "沈莉", "朱利华",
+					    "朱蕾", "邓正平", "吴月芬", "邓冠文", "严婷婷", "李淑芳", "邓萍", "李淑珍", "翟牛宝", "李仲鸣",
+					    "李建", "张绮", "李苗根", "姚培明", "张怡", "姚莹", "黄晨雄", "阮培龙", "谢桂萍", "叶国樑", "黄妙芳",
+					    "柳萌宇", "卞景浩", "倪锦泉", "周贤宝", "牟裕峰", "杨玉莲", "韦忠英", "奚亚萍", "丁林华", "陈燕萍",
 					    "姜在余"];
         
         var status = 0;// 0 开始  1  开始抽奖  2 停止
@@ -82,7 +89,7 @@
                         status = 1;
                         $("#jquery_jplayer_2").jPlayer("stop");
                         $("#jquery_jplayer_1").jPlayer("play");
-                        showInterval = setInterval( showRandNum, 50 );
+                        showInterval = setInterval( showRandNum, 80 );
                     }
                     else if( status == 1 ){
                         $("#jquery_jplayer_1").jPlayer("stop");
@@ -93,23 +100,47 @@
                     }
                 }
             }
+			else if ( e.keyCode == 48 ){ // 0
+				showDiv();
+				$("div.container").css( "background-image",'url("img/0.png")' );
+                $("div.number").css( "padding-top", "260px" );
+                $("div.number").css( "padding-left", "128px" );
+				
+				$("div.titlename").css( "padding-top", "20px" );
+				$("div.titlename").css( "padding-left", "322px" );
+				
+				$(".titlename").html( "特等奖" );
+			}
             else if ( e.keyCode == 49 ){ // 1
                 showDiv();
                 $("div.container").css( "background-image",'url("img/1.png")' );
-                $("div.number").css( "padding-top", "150px" );
-                $("div.number").css( "padding-left", "420px" );
+                $("div.number").css( "padding-top", "200px" );
+                $("div.number").css( "padding-left", "60px" );
+				
+				$("div.titlename").css( "padding-top", "20px" );
+				$("div.titlename").css( "padding-left", "322px" );
+				
+				$(".titlename").html("一等奖");
             }
             else if ( e.keyCode == 50 ){ // 2
                 showDiv();
                 $("div.container").css( "background-image",'url("img/2.png")' );
                 $("div.number").css( "padding-top", "260px" );
-                $("div.number").css( "padding-left", "140px" );
+                $("div.number").css( "padding-left", "128px" );
+				
+				$("div.titlename").css( "padding-top", "20px" );
+				$("div.titlename").css( "padding-left", "322px" );
+				$(".titlename").html( "二等奖" );
             }
             else if ( e.keyCode == 51 ){ // 3
                 showDiv();
                 $("div.container").css( "background-image",'url("img/3.png")' );
-                $("div.number").css( "padding-top", "210px" );
-                $("div.number").css( "padding-left", "580px" );
+                $("div.number").css( "padding-top", "260px" );
+                $("div.number").css( "padding-left", "128px" );
+				
+				$("div.titlename").css( "padding-top", "20px" );
+				$("div.titlename").css( "padding-left", "322px" );
+				$(".titlename").html( "三等奖" );
             }
             /*else {
                 alert( e.keyCode );
@@ -147,11 +178,18 @@
         function showBlack() {
             bShow = 0;
             $(".number").html( "" );
-            $("body").css( "background-color", "black" );
+            $("body").css( "background-color", "red" );
             $("body div").hide();
         }
 
         function showDiv() {
+			if (status == 1) {
+				$("#jquery_jplayer_1").jPlayer("stop");
+				$("#jquery_jplayer_2").jPlayer("stop");
+				clearInterval( showInterval );
+                status =0;
+			}
+			
             bShow = 1;
             $(".number").html( "" );
             $("body").css( "background-color", "white" );
@@ -169,6 +207,7 @@
 <div id="jquery_jplayer_1" class="jp-jplayer"></div>
 <div id="jquery_jplayer_2" class="jp-jplayer"></div>
 <div class="container">
+	<div class="titlename">"奖品"</div>
     <div class="number">100</div>
 </div>
 
